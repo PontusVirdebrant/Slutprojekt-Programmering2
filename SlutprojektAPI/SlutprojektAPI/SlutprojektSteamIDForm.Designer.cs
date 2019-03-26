@@ -29,99 +29,164 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.StartButton = new System.Windows.Forms.Button();
-            this.LabelInput = new System.Windows.Forms.Label();
-            this.LabelInputHelp = new System.Windows.Forms.Label();
-            this.PersonaNameLabel = new System.Windows.Forms.Label();
             this.SteamIDError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelStart = new System.Windows.Forms.Panel();
+            this.LabelInputHelp = new System.Windows.Forms.Label();
+            this.LabelInput = new System.Windows.Forms.Label();
+            this.StartButton = new System.Windows.Forms.Button();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.panelVisaData = new System.Windows.Forms.Panel();
+            this.PersonaNameLabel = new System.Windows.Forms.Label();
+            this.PrivatKontoLabel = new System.Windows.Forms.Label();
+            this.ProfilePicture64 = new System.Windows.Forms.PictureBox();
+            this.ResetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
+            this.panelStart.SuspendLayout();
+            this.panelVisaData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture64)).BeginInit();
             this.SuspendLayout();
             // 
-            // IDTextBox
+            // SteamIDError
             // 
-            this.IDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.IDTextBox.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDTextBox.Location = new System.Drawing.Point(315, 183);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(150, 23);
-            this.IDTextBox.TabIndex = 0;
-            this.IDTextBox.Tag = "IDInput";
-            this.IDTextBox.Text = "\r\n";
-            this.IDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SteamIDError.ContainerControl = this;
             // 
-            // StartButton
+            // panelStart
             // 
-            this.StartButton.Location = new System.Drawing.Point(355, 212);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(75, 23);
-            this.StartButton.TabIndex = 1;
-            this.StartButton.Text = "Sök";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            this.panelStart.Controls.Add(this.LabelInputHelp);
+            this.panelStart.Controls.Add(this.LabelInput);
+            this.panelStart.Controls.Add(this.StartButton);
+            this.panelStart.Controls.Add(this.IDTextBox);
+            this.panelStart.Location = new System.Drawing.Point(13, 12);
+            this.panelStart.Name = "panelStart";
+            this.panelStart.Size = new System.Drawing.Size(775, 425);
+            this.panelStart.TabIndex = 0;
+            // 
+            // LabelInputHelp
+            // 
+            this.LabelInputHelp.AutoSize = true;
+            this.LabelInputHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelInputHelp.Location = new System.Drawing.Point(134, 371);
+            this.LabelInputHelp.Name = "LabelInputHelp";
+            this.LabelInputHelp.Size = new System.Drawing.Size(504, 13);
+            this.LabelInputHelp.TabIndex = 8;
+            this.LabelInputHelp.Text = "Om du inte vet ditt SteamId64 kan du klicka här och komma in på SteamIDFinder och" +
+    " söka upp ditt konto";
+            this.LabelInputHelp.Click += new System.EventHandler(this.LabelInputHelp_Click);
             // 
             // LabelInput
             // 
             this.LabelInput.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelInput.AutoSize = true;
             this.LabelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelInput.Location = new System.Drawing.Point(265, 140);
+            this.LabelInput.Location = new System.Drawing.Point(239, 97);
             this.LabelInput.Name = "LabelInput";
             this.LabelInput.Size = new System.Drawing.Size(253, 24);
-            this.LabelInput.TabIndex = 2;
+            this.LabelInput.TabIndex = 7;
             this.LabelInput.Text = "Skriv in din 64-bit SteamID";
             // 
-            // LabelInputHelp
+            // StartButton
             // 
-            this.LabelInputHelp.AutoSize = true;
-            this.LabelInputHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelInputHelp.Location = new System.Drawing.Point(161, 376);
-            this.LabelInputHelp.Name = "LabelInputHelp";
-            this.LabelInputHelp.Size = new System.Drawing.Size(504, 13);
-            this.LabelInputHelp.TabIndex = 3;
-            this.LabelInputHelp.Text = "Om du inte vet ditt SteamId64 kan du klicka här och komma in på SteamIDFinder och" +
-    " söka upp ditt konto";
-            this.LabelInputHelp.Click += new System.EventHandler(this.SteamIDFinder);
+            this.StartButton.Location = new System.Drawing.Point(328, 207);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(75, 23);
+            this.StartButton.TabIndex = 6;
+            this.StartButton.Text = "Sök";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.IDTextBox.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTextBox.Location = new System.Drawing.Point(288, 178);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(150, 23);
+            this.IDTextBox.TabIndex = 5;
+            this.IDTextBox.Tag = "IDInput";
+            this.IDTextBox.Text = "\r\n";
+            this.IDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panelVisaData
+            // 
+            this.panelVisaData.Controls.Add(this.ResetButton);
+            this.panelVisaData.Controls.Add(this.PrivatKontoLabel);
+            this.panelVisaData.Controls.Add(this.PersonaNameLabel);
+            this.panelVisaData.Controls.Add(this.ProfilePicture64);
+            this.panelVisaData.Location = new System.Drawing.Point(12, 12);
+            this.panelVisaData.Name = "panelVisaData";
+            this.panelVisaData.Size = new System.Drawing.Size(776, 426);
+            this.panelVisaData.TabIndex = 1;
+            this.panelVisaData.Visible = false;
             // 
             // PersonaNameLabel
             // 
             this.PersonaNameLabel.AutoSize = true;
             this.PersonaNameLabel.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PersonaNameLabel.Location = new System.Drawing.Point(286, 20);
+            this.PersonaNameLabel.Location = new System.Drawing.Point(30, 30);
             this.PersonaNameLabel.Name = "PersonaNameLabel";
             this.PersonaNameLabel.Size = new System.Drawing.Size(0, 36);
-            this.PersonaNameLabel.TabIndex = 4;
+            this.PersonaNameLabel.TabIndex = 10;
             // 
-            // SteamIDError
+            // PrivatKontoLabel
             // 
-            this.SteamIDError.ContainerControl = this;
+            this.PrivatKontoLabel.AutoSize = true;
+            this.PrivatKontoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrivatKontoLabel.Location = new System.Drawing.Point(30, 90);
+            this.PrivatKontoLabel.MaximumSize = new System.Drawing.Size(250, 0);
+            this.PrivatKontoLabel.Name = "PrivatKontoLabel";
+            this.PrivatKontoLabel.Size = new System.Drawing.Size(0, 29);
+            this.PrivatKontoLabel.TabIndex = 11;
+            // 
+            // ProfilePicture64
+            // 
+            this.ProfilePicture64.Location = new System.Drawing.Point(30, 90);
+            this.ProfilePicture64.Name = "ProfilePicture64";
+            this.ProfilePicture64.Size = new System.Drawing.Size(64, 64);
+            this.ProfilePicture64.TabIndex = 12;
+            this.ProfilePicture64.TabStop = false;
+            this.ProfilePicture64.Visible = false;
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(663, 371);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(110, 52);
+            this.ResetButton.TabIndex = 13;
+            this.ResetButton.Text = "Tillbaka";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // SlutprojektSteamIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PersonaNameLabel);
-            this.Controls.Add(this.LabelInputHelp);
-            this.Controls.Add(this.LabelInput);
-            this.Controls.Add(this.StartButton);
-            this.Controls.Add(this.IDTextBox);
+            this.Controls.Add(this.panelVisaData);
+            this.Controls.Add(this.panelStart);
             this.Name = "SlutprojektSteamIDForm";
             this.Text = "SlutprojektSteamIDForm";
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).EndInit();
+            this.panelStart.ResumeLayout(false);
+            this.panelStart.PerformLayout();
+            this.panelVisaData.ResumeLayout(false);
+            this.panelVisaData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture64)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Label LabelInput;
-        private System.Windows.Forms.Label LabelInputHelp;
-        private System.Windows.Forms.Label PersonaNameLabel;
         private System.Windows.Forms.ErrorProvider SteamIDError;
+        private System.Windows.Forms.Label LabelInputHelp;
+        private System.Windows.Forms.Label LabelInput;
+        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.Panel panelVisaData;
+        private System.Windows.Forms.Panel panelStart;
+        private System.Windows.Forms.Label PersonaNameLabel;
+        private System.Windows.Forms.Label PrivatKontoLabel;
+        private System.Windows.Forms.PictureBox ProfilePicture64;
+        private System.Windows.Forms.Button ResetButton;
     }
 }
 
