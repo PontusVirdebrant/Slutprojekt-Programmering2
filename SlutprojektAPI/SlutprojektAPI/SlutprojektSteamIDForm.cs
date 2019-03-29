@@ -45,9 +45,9 @@ namespace SlutprojektAPI
                 activePanel.Visible = false;
                 activePanel = panelVisaData; // Byter Panel som visas
                 activePanel.Visible = true;
-                PersonaNameLabel.Text = menu.response.players[0].personaname;
+                PersonaNameLabel.Text = menu.response.players[0].personaname; 
                 if(menu.response.players[0].communityvisibilitystate == 0 || menu.response.players[0].communityvisibilitystate == 1 || menu.response.players[0].communityvisibilitystate == 2)
-                {
+                {  // Går att få 4 svar från APIn men 0, 1 och 2 innebär samma för en icke inloggad åtkomst av APIn
                     PrivatKontoLabel.Text = "Användarens konto är privat eller endast tillgängligt för personens vänner";
                 }
                 else
@@ -55,6 +55,11 @@ namespace SlutprojektAPI
                     ProfilePicture64.Visible = true;
                     ProfilePicture64.ImageLocation = menu.response.players[0].avatarmedium;
                 }
+                if (menu.response.players[0].realname != null)
+                {
+                    RealName.Text = menu.response.players[0].realname;
+                }
+                TimeCreated.Text = DateTimeOffset.FromUnixTimeSeconds(menu.response.players[0].timecreated).ToString(); // Timecreated i Unix tid görs om till vanlig tideräkning och visas i TimeCreated labeln
             }
             catch
             {
@@ -80,7 +85,6 @@ namespace SlutprojektAPI
             activePanel.Visible = false;
             activePanel = panelStart;
             activePanel.Visible = true;
-
         }
 
         private void Rensa()
@@ -88,7 +92,16 @@ namespace SlutprojektAPI
             IDTextBox.Clear();
             PersonaNameLabel.ResetText();
             PrivatKontoLabel.ResetText();
-            ProfilePicture64.Dispose();
+            ProfilePicture64.ResetText();
+            RealName.ResetText();
+            TimeCreated.ResetText();
+        }
+
+        private void ButtonVänlista_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            activePanel = panelVänlista;
+            activePanel.Visible = true;
         }
     }
 }
