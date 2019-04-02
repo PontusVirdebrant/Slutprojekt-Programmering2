@@ -102,6 +102,31 @@ namespace SlutprojektAPI
             activePanel.Visible = false;
             activePanel = panelVänlista;
             activePanel.Visible = true;
+
+            var client = new RestClient("http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=3E9DFE3D214B158BD401D83E7BE7ECE4&steamid=" + ID + "&relationship=friend");
+            var request = new RestRequest("/", Method.GET);
+            IRestResponse friendslist = client.Execute(request);
+            String content = friendslist.Content;
+            Vänner vänner = JsonConvert.DeserializeObject<Vänner>(content);
+
+
+            foreach (var Friend in content)
+            {
+                FriendsListBox.Items.Add(steamid);
+                // FriendsListBox.Items.Add(AliasName(steamid));
+            }
         }
+
+   //     public AliasName(char ID)
+   //     {
+   //         var client = new RestClient("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=3E9DFE3D214B158BD401D83E7BE7ECE4&steamids=" + ID);
+   //         var request = new RestRequest("/", Method.GET);
+   //         IRestResponse response = client.Execute(request);
+   //         String content = response.Content;
+   //         Profil menu = JsonConvert.DeserializeObject<Profil>(content);
+   //        string AliasName = "";
+   //         AliasName = menu.response.players[0].personaname;
+   //         return AliasName;
+   //     }
     }
 }

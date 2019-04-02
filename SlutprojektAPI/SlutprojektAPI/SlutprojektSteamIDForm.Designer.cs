@@ -36,16 +36,16 @@
             this.StartButton = new System.Windows.Forms.Button();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.panelVisaData = new System.Windows.Forms.Panel();
+            this.ButtonVänlista = new System.Windows.Forms.Button();
             this.TimeCreated = new System.Windows.Forms.Label();
             this.RealName = new System.Windows.Forms.Label();
             this.ResetButton = new System.Windows.Forms.Button();
             this.PrivatKontoLabel = new System.Windows.Forms.Label();
             this.PersonaNameLabel = new System.Windows.Forms.Label();
             this.ProfilePicture64 = new System.Windows.Forms.PictureBox();
-            this.ButtonVänlista = new System.Windows.Forms.Button();
             this.panelVänlista = new System.Windows.Forms.Panel();
             this.ResetButton1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.FriendsListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
             this.panelStart.SuspendLayout();
             this.panelVisaData.SuspendLayout();
@@ -128,6 +128,17 @@
             this.panelVisaData.TabIndex = 1;
             this.panelVisaData.Visible = false;
             // 
+            // ButtonVänlista
+            // 
+            this.ButtonVänlista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonVänlista.Location = new System.Drawing.Point(663, 178);
+            this.ButtonVänlista.Name = "ButtonVänlista";
+            this.ButtonVänlista.Size = new System.Drawing.Size(110, 52);
+            this.ButtonVänlista.TabIndex = 16;
+            this.ButtonVänlista.Text = "Vänlista";
+            this.ButtonVänlista.UseVisualStyleBackColor = true;
+            this.ButtonVänlista.Click += new System.EventHandler(this.ButtonVänlista_Click);
+            // 
             // TimeCreated
             // 
             this.TimeCreated.AutoSize = true;
@@ -185,21 +196,10 @@
             this.ProfilePicture64.TabStop = false;
             this.ProfilePicture64.Visible = false;
             // 
-            // ButtonVänlista
-            // 
-            this.ButtonVänlista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonVänlista.Location = new System.Drawing.Point(663, 178);
-            this.ButtonVänlista.Name = "ButtonVänlista";
-            this.ButtonVänlista.Size = new System.Drawing.Size(110, 52);
-            this.ButtonVänlista.TabIndex = 16;
-            this.ButtonVänlista.Text = "Vänlista";
-            this.ButtonVänlista.UseVisualStyleBackColor = true;
-            this.ButtonVänlista.Click += new System.EventHandler(this.ButtonVänlista_Click);
-            // 
             // panelVänlista
             // 
-            this.panelVänlista.Controls.Add(this.listView1);
             this.panelVänlista.Controls.Add(this.ResetButton1);
+            this.panelVänlista.Controls.Add(this.FriendsListBox);
             this.panelVänlista.Location = new System.Drawing.Point(12, 12);
             this.panelVänlista.Name = "panelVänlista";
             this.panelVänlista.Size = new System.Drawing.Size(776, 426);
@@ -217,13 +217,13 @@
             this.ResetButton1.UseVisualStyleBackColor = true;
             this.ResetButton1.Click += new System.EventHandler(this.ResetButton_Click);
             // 
-            // listView1
+            // FriendsListBox
             // 
-            this.listView1.Location = new System.Drawing.Point(30, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(609, 366);
-            this.listView1.TabIndex = 15;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.FriendsListBox.Location = new System.Drawing.Point(30, 30);
+            this.FriendsListBox.MultiColumn = true;
+            this.FriendsListBox.Name = "FriendsListBox";
+            this.FriendsListBox.Size = new System.Drawing.Size(627, 368);
+            this.FriendsListBox.TabIndex = 15;
             // 
             // SlutprojektSteamIDForm
             // 
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Button ButtonVänlista;
         private System.Windows.Forms.Panel panelVänlista;
         private System.Windows.Forms.Button ResetButton1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListBox FriendsListBox;
     }
 }
 

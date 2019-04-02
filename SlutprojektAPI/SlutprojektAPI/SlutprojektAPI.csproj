@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Friend.cs" />
+    <Compile Include="Friendslist.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Profil.cs" />
     <Compile Include="Response.cs" />
@@ -63,6 +65,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vänner.cs" />
     <EmbeddedResource Include="SlutprojektSteamIDForm.resx">
       <DependentUpon>SlutprojektSteamIDForm.cs</DependentUpon>
     </EmbeddedResource>
