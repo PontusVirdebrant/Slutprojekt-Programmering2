@@ -42,14 +42,16 @@
             this.ResetButton = new System.Windows.Forms.Button();
             this.PrivatKontoLabel = new System.Windows.Forms.Label();
             this.PersonaNameLabel = new System.Windows.Forms.Label();
-            this.ProfilePicture64 = new System.Windows.Forms.PictureBox();
+            this.ProfilePicture184 = new System.Windows.Forms.PictureBox();
             this.panelVänlista = new System.Windows.Forms.Panel();
             this.ResetButton1 = new System.Windows.Forms.Button();
             this.FriendsListBox = new System.Windows.Forms.ListBox();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.LiteSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
             this.panelStart.SuspendLayout();
             this.panelVisaData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture184)).BeginInit();
             this.panelVänlista.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             // 
             // panelStart
             // 
+            this.panelStart.Controls.Add(this.LiteSearchButton);
             this.panelStart.Controls.Add(this.LabelInputHelp);
             this.panelStart.Controls.Add(this.LabelInput);
             this.panelStart.Controls.Add(this.StartButton);
@@ -93,11 +96,11 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(328, 207);
+            this.StartButton.Location = new System.Drawing.Point(271, 183);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(75, 23);
+            this.StartButton.Size = new System.Drawing.Size(108, 23);
             this.StartButton.TabIndex = 6;
-            this.StartButton.Text = "Sök";
+            this.StartButton.Text = "StandardSökning";
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
@@ -105,9 +108,9 @@
             // 
             this.IDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.IDTextBox.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDTextBox.Location = new System.Drawing.Point(288, 178);
+            this.IDTextBox.Location = new System.Drawing.Point(271, 154);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(150, 23);
+            this.IDTextBox.Size = new System.Drawing.Size(180, 23);
             this.IDTextBox.TabIndex = 5;
             this.IDTextBox.Tag = "IDInput";
             this.IDTextBox.Text = "\r\n";
@@ -121,7 +124,7 @@
             this.panelVisaData.Controls.Add(this.ResetButton);
             this.panelVisaData.Controls.Add(this.PrivatKontoLabel);
             this.panelVisaData.Controls.Add(this.PersonaNameLabel);
-            this.panelVisaData.Controls.Add(this.ProfilePicture64);
+            this.panelVisaData.Controls.Add(this.ProfilePicture184);
             this.panelVisaData.Location = new System.Drawing.Point(12, 12);
             this.panelVisaData.Name = "panelVisaData";
             this.panelVisaData.Size = new System.Drawing.Size(776, 426);
@@ -143,7 +146,7 @@
             // 
             this.TimeCreated.AutoSize = true;
             this.TimeCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeCreated.Location = new System.Drawing.Point(30, 207);
+            this.TimeCreated.Location = new System.Drawing.Point(30, 178);
             this.TimeCreated.Name = "TimeCreated";
             this.TimeCreated.Size = new System.Drawing.Size(0, 25);
             this.TimeCreated.TabIndex = 15;
@@ -152,7 +155,7 @@
             // 
             this.RealName.AutoSize = true;
             this.RealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RealName.Location = new System.Drawing.Point(30, 161);
+            this.RealName.Location = new System.Drawing.Point(25, 97);
             this.RealName.Name = "RealName";
             this.RealName.Size = new System.Drawing.Size(0, 25);
             this.RealName.TabIndex = 14;
@@ -187,17 +190,18 @@
             this.PersonaNameLabel.Size = new System.Drawing.Size(0, 36);
             this.PersonaNameLabel.TabIndex = 10;
             // 
-            // ProfilePicture64
+            // ProfilePicture184
             // 
-            this.ProfilePicture64.Location = new System.Drawing.Point(30, 90);
-            this.ProfilePicture64.Name = "ProfilePicture64";
-            this.ProfilePicture64.Size = new System.Drawing.Size(64, 64);
-            this.ProfilePicture64.TabIndex = 12;
-            this.ProfilePicture64.TabStop = false;
-            this.ProfilePicture64.Visible = false;
+            this.ProfilePicture184.Location = new System.Drawing.Point(30, 214);
+            this.ProfilePicture184.Name = "ProfilePicture184";
+            this.ProfilePicture184.Size = new System.Drawing.Size(184, 184);
+            this.ProfilePicture184.TabIndex = 12;
+            this.ProfilePicture184.TabStop = false;
+            this.ProfilePicture184.Visible = false;
             // 
             // panelVänlista
             // 
+            this.panelVänlista.Controls.Add(this.BackButton);
             this.panelVänlista.Controls.Add(this.ResetButton1);
             this.panelVänlista.Controls.Add(this.FriendsListBox);
             this.panelVänlista.Location = new System.Drawing.Point(12, 12);
@@ -224,15 +228,37 @@
             this.FriendsListBox.Name = "FriendsListBox";
             this.FriendsListBox.Size = new System.Drawing.Size(627, 368);
             this.FriendsListBox.TabIndex = 15;
+            this.FriendsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FriendsListBox_MouseDoubleClick);
+            // 
+            // BackButton
+            // 
+            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Location = new System.Drawing.Point(663, 178);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(110, 52);
+            this.BackButton.TabIndex = 17;
+            this.BackButton.Text = "Personlig";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // LiteSearchButton
+            // 
+            this.LiteSearchButton.Location = new System.Drawing.Point(386, 183);
+            this.LiteSearchButton.Name = "LiteSearchButton";
+            this.LiteSearchButton.Size = new System.Drawing.Size(65, 23);
+            this.LiteSearchButton.TabIndex = 9;
+            this.LiteSearchButton.Text = "SnabbSök";
+            this.LiteSearchButton.UseVisualStyleBackColor = true;
+            this.LiteSearchButton.Click += new System.EventHandler(this.LiteSearchButton_Click);
             // 
             // SlutprojektSteamIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelStart);
             this.Controls.Add(this.panelVänlista);
             this.Controls.Add(this.panelVisaData);
-            this.Controls.Add(this.panelStart);
             this.Name = "SlutprojektSteamIDForm";
             this.Text = "SlutprojektSteamIDForm";
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).EndInit();
@@ -240,7 +266,7 @@
             this.panelStart.PerformLayout();
             this.panelVisaData.ResumeLayout(false);
             this.panelVisaData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture184)).EndInit();
             this.panelVänlista.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -256,7 +282,7 @@
         private System.Windows.Forms.Panel panelStart;
         private System.Windows.Forms.Label PersonaNameLabel;
         private System.Windows.Forms.Label PrivatKontoLabel;
-        private System.Windows.Forms.PictureBox ProfilePicture64;
+        private System.Windows.Forms.PictureBox ProfilePicture184;
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Label RealName;
         private System.Windows.Forms.Label TimeCreated;
@@ -264,6 +290,8 @@
         private System.Windows.Forms.Panel panelVänlista;
         private System.Windows.Forms.Button ResetButton1;
         private System.Windows.Forms.ListBox FriendsListBox;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button LiteSearchButton;
     }
 }
 
