@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,8 +53,9 @@ namespace SlutprojektAPI
                 activePanel.Visible = false;
                 activePanel = panelVisaData; // Byter Panel som visas
                 activePanel.Visible = true;
-                PersonaNameLabel.Text = menu.response.players[0].personaname; 
-                if(menu.response.players[0].communityvisibilitystate == 0 || menu.response.players[0].communityvisibilitystate == 1 || menu.response.players[0].communityvisibilitystate == 2)
+                PersonaNameLabel.Text = menu.response.players[0].personaname;
+                PersonaNameLabel1.Text = menu.response.players[0].personaname;
+                if (menu.response.players[0].communityvisibilitystate == 0 || menu.response.players[0].communityvisibilitystate == 1 || menu.response.players[0].communityvisibilitystate == 2)
                 {  // Går att få 4 svar från APIn men 0, 1 och 2 innebär samma för en icke inloggad åtkomst av APIn
                     PrivatKontoLabel.Text = "Användarens konto är privat eller endast tillgängligt för personens vänner";
                 }
@@ -79,11 +81,6 @@ namespace SlutprojektAPI
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LabelInputHelp_Click(object sender, EventArgs e) //Skickar användaren till en hemsida där de kan hämta sitt 64-bit SteamID genom användarens standardwebbläsare
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("https://steamidfinder.com/");
@@ -98,7 +95,7 @@ namespace SlutprojektAPI
             activePanel.Visible = true;
         }
 
-        private void Rensa()
+        private void Rensa() // Nollställer alla värden och rensar all data för att förbereda en ny sökning
         {
             IDTextBox.Clear();
             PersonaNameLabel.ResetText();
@@ -107,9 +104,10 @@ namespace SlutprojektAPI
             RealName.ResetText();
             TimeCreated.ResetText();
             FriendsListBox.Items.Clear();
+            FriendsListError.Clear();
         }
 
-        private void ButtonVänlista_Click(object sender, EventArgs e)
+        private void ButtonVänlista_Click(object sender, EventArgs e)  //Byter till vänlistan från panelen med konto informationen.
         {
             activePanel.Visible = false;
             activePanel = panelVänlista;
@@ -152,14 +150,14 @@ namespace SlutprojektAPI
             return personaName;
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e) // Byter från vänlistan till panelen med informationen om kontot.
         {
             activePanel.Visible = false;
             activePanel = panelVisaData;
             activePanel.Visible = true;
         }
 
-        private void FriendsListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void FriendsListBox_MouseDoubleClick(object sender, MouseEventArgs e) //Byter aktivt konto genom vänlistan
         {
             var client = new RestClient("http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=3E9DFE3D214B158BD401D83E7BE7ECE4&steamid=" + ID); 
             var request = new RestRequest("/", Method.GET);
@@ -174,6 +172,20 @@ namespace SlutprojektAPI
             Friendslist();
         }
 
-
+        private void ButtonLocalSave_Click(object sender, EventArgs e) // Sparar en användares vänlista till en lokal fil på skrivbordet
+        {
+            if (FriendsListBox.Items.Count != 0) { 
+                StreamWriter friendsListWriter = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//FriendsList.txt");
+                friendsListWriter.WriteLine(AliasName(ID) + "s vänlista:");
+                foreach (String items in FriendsListBox.Items)
+                    {
+                    friendsListWriter.WriteLine(items);
+                    }
+                friendsListWriter.Close();
+            }
+            else { 
+            FriendsListError.SetError(ButtonLocalSave, "Ingen vänlista har lästs in");
+            }
+        }
     }
 }

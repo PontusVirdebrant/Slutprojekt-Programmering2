@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.SteamIDError = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelStart = new System.Windows.Forms.Panel();
+            this.LiteSearchButton = new System.Windows.Forms.Button();
             this.LabelInputHelp = new System.Windows.Forms.Label();
             this.LabelInput = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
@@ -43,15 +44,18 @@
             this.PrivatKontoLabel = new System.Windows.Forms.Label();
             this.PersonaNameLabel = new System.Windows.Forms.Label();
             this.ProfilePicture184 = new System.Windows.Forms.PictureBox();
-            this.panelVänlista = new System.Windows.Forms.Panel();
-            this.ResetButton1 = new System.Windows.Forms.Button();
+            this.FriendsListError = new System.Windows.Forms.ErrorProvider(this.components);
             this.FriendsListBox = new System.Windows.Forms.ListBox();
+            this.ResetButton1 = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.LiteSearchButton = new System.Windows.Forms.Button();
+            this.ButtonLocalSave = new System.Windows.Forms.Button();
+            this.panelVänlista = new System.Windows.Forms.Panel();
+            this.PersonaNameLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
             this.panelStart.SuspendLayout();
             this.panelVisaData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture184)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FriendsListError)).BeginInit();
             this.panelVänlista.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,10 +70,20 @@
             this.panelStart.Controls.Add(this.LabelInput);
             this.panelStart.Controls.Add(this.StartButton);
             this.panelStart.Controls.Add(this.IDTextBox);
-            this.panelStart.Location = new System.Drawing.Point(13, 12);
+            this.panelStart.Location = new System.Drawing.Point(0, 0);
             this.panelStart.Name = "panelStart";
-            this.panelStart.Size = new System.Drawing.Size(775, 425);
+            this.panelStart.Size = new System.Drawing.Size(788, 438);
             this.panelStart.TabIndex = 0;
+            // 
+            // LiteSearchButton
+            // 
+            this.LiteSearchButton.Location = new System.Drawing.Point(386, 183);
+            this.LiteSearchButton.Name = "LiteSearchButton";
+            this.LiteSearchButton.Size = new System.Drawing.Size(65, 23);
+            this.LiteSearchButton.TabIndex = 9;
+            this.LiteSearchButton.Text = "SnabbSök";
+            this.LiteSearchButton.UseVisualStyleBackColor = true;
+            this.LiteSearchButton.Click += new System.EventHandler(this.LiteSearchButton_Click);
             // 
             // LabelInputHelp
             // 
@@ -88,7 +102,7 @@
             this.LabelInput.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelInput.AutoSize = true;
             this.LabelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelInput.Location = new System.Drawing.Point(239, 97);
+            this.LabelInput.Location = new System.Drawing.Point(246, 97);
             this.LabelInput.Name = "LabelInput";
             this.LabelInput.Size = new System.Drawing.Size(253, 24);
             this.LabelInput.TabIndex = 7;
@@ -125,9 +139,9 @@
             this.panelVisaData.Controls.Add(this.PrivatKontoLabel);
             this.panelVisaData.Controls.Add(this.PersonaNameLabel);
             this.panelVisaData.Controls.Add(this.ProfilePicture184);
-            this.panelVisaData.Location = new System.Drawing.Point(12, 12);
+            this.panelVisaData.Location = new System.Drawing.Point(0, 0);
             this.panelVisaData.Name = "panelVisaData";
-            this.panelVisaData.Size = new System.Drawing.Size(776, 426);
+            this.panelVisaData.Size = new System.Drawing.Size(788, 438);
             this.panelVisaData.TabIndex = 1;
             this.panelVisaData.Visible = false;
             // 
@@ -199,16 +213,18 @@
             this.ProfilePicture184.TabStop = false;
             this.ProfilePicture184.Visible = false;
             // 
-            // panelVänlista
+            // FriendsListError
             // 
-            this.panelVänlista.Controls.Add(this.BackButton);
-            this.panelVänlista.Controls.Add(this.ResetButton1);
-            this.panelVänlista.Controls.Add(this.FriendsListBox);
-            this.panelVänlista.Location = new System.Drawing.Point(12, 12);
-            this.panelVänlista.Name = "panelVänlista";
-            this.panelVänlista.Size = new System.Drawing.Size(776, 426);
-            this.panelVänlista.TabIndex = 17;
-            this.panelVänlista.Visible = false;
+            this.FriendsListError.ContainerControl = this;
+            // 
+            // FriendsListBox
+            // 
+            this.FriendsListBox.Location = new System.Drawing.Point(30, 69);
+            this.FriendsListBox.MultiColumn = true;
+            this.FriendsListBox.Name = "FriendsListBox";
+            this.FriendsListBox.Size = new System.Drawing.Size(627, 329);
+            this.FriendsListBox.TabIndex = 15;
+            this.FriendsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FriendsListBox_MouseDoubleClick);
             // 
             // ResetButton1
             // 
@@ -221,15 +237,6 @@
             this.ResetButton1.UseVisualStyleBackColor = true;
             this.ResetButton1.Click += new System.EventHandler(this.ResetButton_Click);
             // 
-            // FriendsListBox
-            // 
-            this.FriendsListBox.Location = new System.Drawing.Point(30, 30);
-            this.FriendsListBox.MultiColumn = true;
-            this.FriendsListBox.Name = "FriendsListBox";
-            this.FriendsListBox.Size = new System.Drawing.Size(627, 368);
-            this.FriendsListBox.TabIndex = 15;
-            this.FriendsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FriendsListBox_MouseDoubleClick);
-            // 
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,24 +248,47 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // LiteSearchButton
+            // ButtonLocalSave
             // 
-            this.LiteSearchButton.Location = new System.Drawing.Point(386, 183);
-            this.LiteSearchButton.Name = "LiteSearchButton";
-            this.LiteSearchButton.Size = new System.Drawing.Size(65, 23);
-            this.LiteSearchButton.TabIndex = 9;
-            this.LiteSearchButton.Text = "SnabbSök";
-            this.LiteSearchButton.UseVisualStyleBackColor = true;
-            this.LiteSearchButton.Click += new System.EventHandler(this.LiteSearchButton_Click);
+            this.ButtonLocalSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLocalSave.Location = new System.Drawing.Point(663, 42);
+            this.ButtonLocalSave.Name = "ButtonLocalSave";
+            this.ButtonLocalSave.Size = new System.Drawing.Size(110, 52);
+            this.ButtonLocalSave.TabIndex = 18;
+            this.ButtonLocalSave.Text = "SparaList";
+            this.ButtonLocalSave.UseVisualStyleBackColor = true;
+            this.ButtonLocalSave.Click += new System.EventHandler(this.ButtonLocalSave_Click);
+            // 
+            // panelVänlista
+            // 
+            this.panelVänlista.Controls.Add(this.PersonaNameLabel1);
+            this.panelVänlista.Controls.Add(this.ButtonLocalSave);
+            this.panelVänlista.Controls.Add(this.BackButton);
+            this.panelVänlista.Controls.Add(this.ResetButton1);
+            this.panelVänlista.Controls.Add(this.FriendsListBox);
+            this.panelVänlista.Location = new System.Drawing.Point(0, 0);
+            this.panelVänlista.Name = "panelVänlista";
+            this.panelVänlista.Size = new System.Drawing.Size(788, 438);
+            this.panelVänlista.TabIndex = 17;
+            this.panelVänlista.Visible = false;
+            // 
+            // PersonaNameLabel1
+            // 
+            this.PersonaNameLabel1.AutoSize = true;
+            this.PersonaNameLabel1.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonaNameLabel1.Location = new System.Drawing.Point(30, 30);
+            this.PersonaNameLabel1.Name = "PersonaNameLabel1";
+            this.PersonaNameLabel1.Size = new System.Drawing.Size(0, 36);
+            this.PersonaNameLabel1.TabIndex = 19;
             // 
             // SlutprojektSteamIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelStart);
             this.Controls.Add(this.panelVänlista);
             this.Controls.Add(this.panelVisaData);
+            this.Controls.Add(this.panelStart);
             this.Name = "SlutprojektSteamIDForm";
             this.Text = "SlutprojektSteamIDForm";
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).EndInit();
@@ -267,7 +297,9 @@
             this.panelVisaData.ResumeLayout(false);
             this.panelVisaData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture184)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FriendsListError)).EndInit();
             this.panelVänlista.ResumeLayout(false);
+            this.panelVänlista.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,11 +319,14 @@
         private System.Windows.Forms.Label RealName;
         private System.Windows.Forms.Label TimeCreated;
         private System.Windows.Forms.Button ButtonVänlista;
+        private System.Windows.Forms.Button LiteSearchButton;
+        private System.Windows.Forms.ErrorProvider FriendsListError;
         private System.Windows.Forms.Panel panelVänlista;
+        private System.Windows.Forms.Button ButtonLocalSave;
+        private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button ResetButton1;
         private System.Windows.Forms.ListBox FriendsListBox;
-        private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button LiteSearchButton;
+        private System.Windows.Forms.Label PersonaNameLabel1;
     }
 }
 
