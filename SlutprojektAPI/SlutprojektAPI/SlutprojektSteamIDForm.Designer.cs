@@ -51,6 +51,7 @@
             this.ButtonLocalSave = new System.Windows.Forms.Button();
             this.panelVänlista = new System.Windows.Forms.Panel();
             this.PersonaNameLabel1 = new System.Windows.Forms.Label();
+            this.buttonOidLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
             this.panelStart.SuspendLayout();
             this.panelVisaData.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // panelStart
             // 
+            this.panelStart.Controls.Add(this.buttonOidLogin);
             this.panelStart.Controls.Add(this.LiteSearchButton);
             this.panelStart.Controls.Add(this.LabelInputHelp);
             this.panelStart.Controls.Add(this.LabelInput);
@@ -72,7 +74,7 @@
             this.panelStart.Controls.Add(this.IDTextBox);
             this.panelStart.Location = new System.Drawing.Point(0, 0);
             this.panelStart.Name = "panelStart";
-            this.panelStart.Size = new System.Drawing.Size(788, 438);
+            this.panelStart.Size = new System.Drawing.Size(800, 450);
             this.panelStart.TabIndex = 0;
             // 
             // LiteSearchButton
@@ -102,7 +104,7 @@
             this.LabelInput.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelInput.AutoSize = true;
             this.LabelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelInput.Location = new System.Drawing.Point(246, 97);
+            this.LabelInput.Location = new System.Drawing.Point(252, 97);
             this.LabelInput.Name = "LabelInput";
             this.LabelInput.Size = new System.Drawing.Size(253, 24);
             this.LabelInput.TabIndex = 7;
@@ -141,7 +143,7 @@
             this.panelVisaData.Controls.Add(this.ProfilePicture184);
             this.panelVisaData.Location = new System.Drawing.Point(0, 0);
             this.panelVisaData.Name = "panelVisaData";
-            this.panelVisaData.Size = new System.Drawing.Size(788, 438);
+            this.panelVisaData.Size = new System.Drawing.Size(800, 450);
             this.panelVisaData.TabIndex = 1;
             this.panelVisaData.Visible = false;
             // 
@@ -268,7 +270,7 @@
             this.panelVänlista.Controls.Add(this.FriendsListBox);
             this.panelVänlista.Location = new System.Drawing.Point(0, 0);
             this.panelVänlista.Name = "panelVänlista";
-            this.panelVänlista.Size = new System.Drawing.Size(788, 438);
+            this.panelVänlista.Size = new System.Drawing.Size(800, 450);
             this.panelVänlista.TabIndex = 17;
             this.panelVänlista.Visible = false;
             // 
@@ -281,14 +283,24 @@
             this.PersonaNameLabel1.Size = new System.Drawing.Size(0, 36);
             this.PersonaNameLabel1.TabIndex = 19;
             // 
+            // buttonOidLogin
+            // 
+            this.buttonOidLogin.Image = global::SlutprojektAPI.Properties.Resources.SteamLogin;
+            this.buttonOidLogin.Location = new System.Drawing.Point(664, 12);
+            this.buttonOidLogin.Name = "buttonOidLogin";
+            this.buttonOidLogin.Size = new System.Drawing.Size(109, 66);
+            this.buttonOidLogin.TabIndex = 10;
+            this.buttonOidLogin.UseVisualStyleBackColor = true;
+            this.buttonOidLogin.Click += new System.EventHandler(this.buttonOidLogin_Click);
+            // 
             // SlutprojektSteamIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelStart);
             this.Controls.Add(this.panelVänlista);
             this.Controls.Add(this.panelVisaData);
-            this.Controls.Add(this.panelStart);
             this.Name = "SlutprojektSteamIDForm";
             this.Text = "SlutprojektSteamIDForm";
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).EndInit();
@@ -327,6 +339,7 @@
         private System.Windows.Forms.Button ResetButton1;
         private System.Windows.Forms.ListBox FriendsListBox;
         private System.Windows.Forms.Label PersonaNameLabel1;
+        private System.Windows.Forms.Button buttonOidLogin;
     }
 }
 

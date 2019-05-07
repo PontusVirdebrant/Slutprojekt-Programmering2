@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System;
+using System.Net.Http;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Browser;
+
+
 // Steam API key 3E9DFE3D214B158BD401D83E7BE7ECE4
 namespace SlutprojektAPI
 {
@@ -18,11 +17,14 @@ namespace SlutprojektAPI
     {
         public String ID = "";
         public Panel activePanel = new Panel(); // Detta låter mig lättare kontrollera de olika panelerna och skifta mellan dem
+        private OidcClient _oidcClient;
+        private HttpClient _apiClient;
 
         public SlutprojektSteamIDForm()
         {
             InitializeComponent();
             activePanel = panelStart;
+
         }
         private void StartButton_Click(object sender, EventArgs e) // Vad som händer när man trycker på "Start" knappen
         {
@@ -186,6 +188,21 @@ namespace SlutprojektAPI
             else { 
             FriendsListError.SetError(ButtonLocalSave, "Ingen vänlista har lästs in");
             }
+        }
+
+        private void buttonOidLogin_Click(object sender, EventArgs e)
+        {
+            var options = new OidcClientOptions
+            {
+                Authority = "https://steamcommunity.com/openid",
+                ClientId = "native.hybrid",
+                Scope = "openid steam api",
+                RedirectUri = "http://localhost/winforms.client",
+                
+            };
+
+            var client = new OidcClient(options);
+
         }
     }
 }
