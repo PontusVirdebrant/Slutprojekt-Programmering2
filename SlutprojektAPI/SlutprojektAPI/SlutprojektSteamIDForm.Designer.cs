@@ -51,7 +51,6 @@
             this.ButtonLocalSave = new System.Windows.Forms.Button();
             this.panelVänlista = new System.Windows.Forms.Panel();
             this.PersonaNameLabel1 = new System.Windows.Forms.Label();
-            this.buttonOidLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).BeginInit();
             this.panelStart.SuspendLayout();
             this.panelVisaData.SuspendLayout();
@@ -66,7 +65,6 @@
             // 
             // panelStart
             // 
-            this.panelStart.Controls.Add(this.buttonOidLogin);
             this.panelStart.Controls.Add(this.LiteSearchButton);
             this.panelStart.Controls.Add(this.LabelInputHelp);
             this.panelStart.Controls.Add(this.LabelInput);
@@ -283,16 +281,6 @@
             this.PersonaNameLabel1.Size = new System.Drawing.Size(0, 36);
             this.PersonaNameLabel1.TabIndex = 19;
             // 
-            // buttonOidLogin
-            // 
-            this.buttonOidLogin.Image = global::SlutprojektAPI.Properties.Resources.SteamLogin;
-            this.buttonOidLogin.Location = new System.Drawing.Point(664, 12);
-            this.buttonOidLogin.Name = "buttonOidLogin";
-            this.buttonOidLogin.Size = new System.Drawing.Size(109, 66);
-            this.buttonOidLogin.TabIndex = 10;
-            this.buttonOidLogin.UseVisualStyleBackColor = true;
-            this.buttonOidLogin.Click += new System.EventHandler(this.buttonOidLogin_Click);
-            // 
             // SlutprojektSteamIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +327,6 @@
         private System.Windows.Forms.Button ResetButton1;
         private System.Windows.Forms.ListBox FriendsListBox;
         private System.Windows.Forms.Label PersonaNameLabel1;
-        private System.Windows.Forms.Button buttonOidLogin;
     }
 }
 
