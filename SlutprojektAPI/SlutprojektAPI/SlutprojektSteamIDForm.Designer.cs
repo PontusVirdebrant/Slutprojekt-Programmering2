@@ -287,8 +287,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelStart);
-            this.Controls.Add(this.panelVänlista);
             this.Controls.Add(this.panelVisaData);
+            this.Controls.Add(this.panelVänlista);
             this.Name = "SlutprojektSteamIDForm";
             this.Text = "SlutprojektSteamIDForm";
             ((System.ComponentModel.ISupportInitialize)(this.SteamIDError)).EndInit();

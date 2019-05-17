@@ -16,6 +16,13 @@ namespace SlutprojektAPI
     {
         public String ID = "";
         public Panel activePanel = new Panel(); // Detta låter mig lättare kontrollera de olika panelerna och skifta mellan dem
+        enum KontoStatus
+        {
+            Default,
+            Privat,
+            Offentligt
+        }
+        KontoStatus kontoStatus = KontoStatus.Default; //enum för kontostatus. Gör inget funktionellt men skulle användas¯\_(ツ)_/¯
 
         public SlutprojektSteamIDForm()
         {
@@ -53,12 +60,15 @@ namespace SlutprojektAPI
                 activePanel.Visible = true;
                 PersonaNameLabel.Text = menu.response.players[0].personaname;
                 PersonaNameLabel1.Text = menu.response.players[0].personaname;
+
                 if (menu.response.players[0].communityvisibilitystate == 0 || menu.response.players[0].communityvisibilitystate == 1 || menu.response.players[0].communityvisibilitystate == 2)
                 {  // Går att få 4 svar från APIn men 0, 1 och 2 innebär samma för en icke inloggad åtkomst av APIn
+                    kontoStatus = KontoStatus.Privat;
                     PrivatKontoLabel.Text = "Användarens konto är privat eller endast tillgängligt för personens vänner";
                 }
                 else
                 {
+                    kontoStatus = KontoStatus.Offentligt;
                     ProfilePicture184.Visible = true;
                     ProfilePicture184.ImageLocation = menu.response.players[0].avatarfull;
                 }
